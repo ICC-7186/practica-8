@@ -35,7 +35,7 @@ sudo apt-get install git
 ```
 Una vez finaliado, verifica la versión instalada.
 
-```
+```bash
 git -v
 ```
 
@@ -43,18 +43,18 @@ git -v
   
 Instala Java con el siguiente comando:
 
-```
+```bash
 sudo apt-get install openjdk-21-jre
 ```
 
 Al finalizar, verifica la versión instalada.
 
-```
+```bash
 java --version
 ```
 y también del compilador:
 
-```
+```bash
 javac --version
 ``` 
 
@@ -62,7 +62,8 @@ javac --version
 
 Puedes encontrar más información de los recursos a utilizar en:
 
-- []()
+- [Serializable](https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html)
+- [Serialización de objetos](https://puntocomnoesunlenguaje.blogspot.com/2013/10/java-serializacion-persistencia.html)
 
 ## Ejercicio ⌨️
 
@@ -77,10 +78,13 @@ Implementa una clase _Mensaje_ que contenga la siguiente estructura y comportami
     - El cuerpo del mensaje.
     - El nombre del emisor.
     - El nombre del mensaje.
+    - La fecha en la que se recibe el mensaje
+    - La prioridad del mensaje (ordinario, casual o urgente).
   - Constructores
     - Constructor que inicializa los atributos.
   - Métodos
     - Métodos de acceso.
+    - Método para comparar mensajes acorde a su prioridad.
     - Método para devolver el mensaje en forma de cadena.
 
 Haciendo uso de la clase _Mensaje_, implementa una clase _Contestadora_ que contenga la siguiente estructura y comportamiento:
@@ -88,31 +92,30 @@ Haciendo uso de la clase _Mensaje_, implementa una clase _Contestadora_ que cont
   - Atributos
     - Una lista de mensajes.
   - Constructores
-    - Constructor que inicialice el arreglo con, a lo m ́as, 10 mensajes.
+    - Constructor que inicialice la lista con, a lo más, 15 mensajes.
   - Métodos
     - Un método de acceso.
     - Un método para guardar un mensaje.
-    - Un método para leer un mensaje.
+    - Un método para leer un mensaje. Se debe de preguntar si se se desea eliminar el mensaje una vez se haya leído.
     - Un método para agregar el mensaje a la lista de mensajes.
     - Un método para obtener un mensaje dada una posición de la lista.
     - Un método para borrar un mensaje.
-    - Un método para vaciar la Contestadora.
-    - Un método para devolver la información de la Contestadora.
-    - Un método para devolver la información de la Contestadora.
+    - Un método para ordenar los mensajes de la `Contestadora` donde primero deben ir los urgentes, después los ordinarios y al final los casuales.
+    - Un método para vaciar la `Contestadora`.
+    - Un método para devolver la información de la `Contestadora`. Se debe poder ver el nombre del mensaje y la prioridad de este.
 
 Deberás crear las siguientes excepciones:
-   - ContestadoraLlenaException que se lanzar ́a si se quiere guardar un mensaje cuando la contestadora ya est ́e llena.
-   - _PosicionInvalidaException_ si se desea obtener un mensaje de un  ́ındice que no existe.
-   - _MensajeInexistenteException_ si se desea borrar un mensaje que no existe.
-   - _ContestadoraVaciaException_ si se desea vaciar la Contestadora ya vacía.
+   - `ContestadoraLlenaException` que se lanzará si se quiere guardar un mensaje cuando la contestadora ya esté llena.
+   - `PosicionInvalidaException` si se desea obtener un mensaje de un  ́ındice que no existe.
+   - `MensajeInexistenteException` si se desea borrar un mensaje que no existe.
+   - `ContestadoraVaciaException` si se desea vaciar la `Contestadora` ya vacía.
 
 Recuerda que tu programa debe ser +*ROBUSTO** y no debe terminar de forma inesperada;
 debes indicar una forma de terminar la ejecución.
 
-Además debes de utilizar la persistencia para preservar el estado de la _Contestadora_, es decir, si la _Contestadora_ se apaga, el programa deben guardar todos los mensajes; si la _Contestadora_ se prende, se deben mostrar los mensajes que se quedaron guardados la  ́ultima vez que se apagó.
+Además debes de utilizar la persistencia para preservar el estado de la `Contestadora`, es decir, si la `Contestadora` se apaga, el programa deben guardar todos los mensajes; si la `Contestadora` se prende, se deben mostrar los mensajes que se quedaron guardados la  ́ultima vez que se apagó.
 
-No olvides incluir la documentación html de cada clase que implementes y un archivo de
-prueba para visualizar el funcionamiento del programa.
+No olvides docuemntar tu código y generar la documentación _html_ de cada clase que implementes y un archivo de prueba para visualizar el funcionamiento del programa.
 
 
 ## Intrucciones
